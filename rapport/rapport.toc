@@ -1,0 +1,4 @@
+\select@language {french}
+\contentsline {section}{Liste des tableaux}{3}
+\contentsline {section}{Liste des figures}{3}
+\contentsline {section}{Bibliographie}{5}

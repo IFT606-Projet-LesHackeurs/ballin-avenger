@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+    \usepackage{times}
+    \usepackage[latin1]{inputenc}
+    \usepackage[frenchb]{babel}
+    \usepackage{graphicx}
+    \usepackage[numbers]{natbib}
+    \usepackage{amsfonts}
+    \usepackage{amsmath}
+
+    \numberwithin{equation}{section}
+    \numberwithin{figure}{section}
+    \numberwithin{table}{section}
+
+    \usepackage[nooneline]{subfigure}
+    \usepackage{bm}
+%    \usepackage{prelim2e}
+    \usepackage{booktabs}
+    \usepackage{color}
+    \usepackage{rotating}
+    \usepackage{afterpage}
+%    \usepackage[draft]{fixme}
+    \usepackage{refstyle}
+        \newref{equ}{refcmd=(\ref{#1}),name=équation~,Name=Équation~,names=équations~,Names=Équation~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{fig}{name=figure~,names=figures~,Name=Figure~,Names=Figures~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{subfig}{name=figure~,names=figures~,Name=Figure~,Names=Figures~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{chap}{name=chapitre~,names=chapitres~,Name=Chapitre~,Names=Chapitres~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{sect}{name=section~,names=sections~,Name=Section~,Names=Sections~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{ssect}{name=section~,names=sections~,Name=Section~,Names=Sections~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{sssect}{name=section~,names=sections~,Name=Section~,Names=Sections~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{tab}{name=tableau~,names=tableaux~,Name=Tableau~,Names=Tableaux~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{step}{name=étape~,names=étapes~,Name=Étape~,Names=Étapes~,lsttxt={\ et\ },rngtxt={\ à\ }}
+        \newref{annex}{name=annexe~,names=annexes~,Name=Annexe~,Names=Annexes~,lsttxt={\ et\ },rngtxt={\ à\ }}
+    \usepackage{fancyhdr}
+
+    \setlength{\textwidth}{175mm}
+    \setlength{\textheight}{210mm}
+    \setlength{\headsep}{2mm}
+    \setlength{\topmargin}{-3mm}
+    \setlength{\unitlength}{1mm}
+    \setlength{\itemsep}{0mm}
+    \setlength{\columnsep}{0.3125in}
+    \setlength{\headheight}{10mm}
+    \setlength{\parindent}{1pc}
+    \setlength{\oddsidemargin}{-.304in}
+    \setlength{\evensidemargin}{-.304in}
+    \setlength{\abovedisplayskip}{-2mm}
+    \setlength{\belowdisplayskip}{-2mm}
+    \setlength{\abovedisplayshortskip}{-2mm}
+    \setlength{\belowdisplayshortskip}{-2mm}
+    \setlength{\topsep}{0mm}
+    \addtolength{\headsep}{10mm}
+
+%    \renewcommand{\subfigcapskip}{3pt}
+%    \renewcommand{\subfigtopskip}{2pt}
+%    \renewcommand{\subfigbottomskip}{3pt}
+%    \setlength{\textfloatsep}{6pt plus 3pt minus 3pt}
+%    \setlength{\floatsep}{6pt plus 3pt minus 3pt}
+%    \setlength{\abovecaptionskip}{5pt}
+
+
+    % Allows to have list item with less space between each element of the list
+    % Use \noitemsep or \doitemsep before
+    \let\origEnumerate =\enumerate
+    \let\origItemize =\itemize
+    \let\origDescription =\description
+    \def\Nospacing{\itemsep=0pt\topsep=3pt\partopsep=0pt%
+    \parskip=0pt\parsep=0pt}
+    \def\noitemsep{% Redefine the environments in terms of the original values
+        \renewenvironment{itemize}{\origItemize\Nospacing}{\endlist}
+        \renewenvironment{enumerate}{\origEnumerate\Nospacing}{\endlist}
+        \renewenvironment{description}{\origDescription\Nospacing}{\endlist}
+    }
+    \def\doitemsep{% Redefine the environments to the original values
+        \renewenvironment{itemize}{\origItemize}{\endlist}
+        \renewenvironment{enumerate}{\origEnumerate}{\endlist}
+        \renewenvironment{description}{\origDescription}{\endlist}
+    }
+
+    % Allows to ignore continued figure in the TOC
+    \makeatletter
+    \def\afterfi#1\fi{\fi#1}
+    \let\ORIGaddtocontents\addtocontents
+    \newcommand*\dontaddtolof[2]{\edef\temp{#1}%
+    \ifx\temp\ext@figure\else\afterfi\ORIGaddtocontents{#1}{#2}\fi}
+    \makeatletter
+    \newcommand*\ignorelof{\let\addtocontents\dontaddtolof}
+    \newcommand*\obeylof{\let\addtocontents\ORIGaddtocontents}
+
+    \bibliographystyle{plainnat-fr}
+
+%    \linespread{1.6}
+
+    \pagestyle{fancy}
+
+    \lhead{\small{DI, Université de Sherbrooke}}
+    \rhead{\small{Rapport de recherche no~XXX}}
+
+\begin{document}
+
+\title{Votre titre %
+\thanks{Ce travail a été financé par ...}
+}
+
+\author{Auteur 1 et Auteur 2 %
+\thanks{Auteur à contacter. Tél.: +819-821-8000 xNNNN; télécopieur:+819-821-8200}}
+\date{}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\vspace*{-5mm}
+
+\begin{center}
+\small{
+    Département d'informatique \\
+    Université de Sherbrooke \\
+    Sherbrooke (Qc), Canada, J1K 2R1 \\
+    \{vous, autre\}@usherbrooke.ca
+}
+\end{center}
+
+\vspace*{5mm}
+
+\begin{center}
+\textbf{- Rapport de recherche no XXX -}
+\end{center}
+
+\vspace*{5mm}
+
+\begin{abstract}
+    Insérer le résumé ici.
+\end{abstract}
+
+%-------------------------------------------------------------------------
+
+\renewcommand{\listtablename}{Liste des tableaux}
+\renewcommand{\refname}{Bibliographie}
+\renewcommand{\listfigurename}{Liste des figures}
+
+\eject
+
+    \tableofcontents
+
+\eject
+
+    \addcontentsline{toc}{section}{\listtablename}
+    \listoftables
+    \addcontentsline{toc}{section}{\listfigurename}
+    \listoffigures
+
+\eject
+
+% ----------------------------------------------
+% Contenu
+% ----------------------------------------------
+Le contenu ici !
+
+dick butt
+
+$$ \frac{2}{3} $$
+
+\eject
+
+\addcontentsline{toc}{section}{\refname}
+\bibliography{biblio}
+
+\end{document}
+`
