@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.17)  9 APR 2015 13:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.17)  9 APR 2015 13:37
 entering extended mode
 **rapport
 (D:\ECOLE\ift606\ballin-avenger\rapport\rapport.tex
@@ -251,155 +251,6 @@ Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
 \AP@partial=\box29
 \AP@footins=\box30
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\refstyle\refstyle.sty"
-Package: refstyle 2010/11/02 v0.5 Reference formatting (DNJ Els)
-Package refstyle Info: Config file refstyle.cfg used on input line 322.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\refstyle\refstyle.cfg"
-File: refstyle.cfg 2010/11/02 0.5 Configuration file for refstyle (DNJ Els)
-Package refstyle Info: New reference template \newref{part} on input line 468.
-Package refstyle Info: \partkey created on input line 468.
-Package refstyle Info: \partlabel created on input line 468.
-Package refstyle Info: \partref created on input line 468.
-Package refstyle Info: \Partref created on input line 468.
-Package refstyle Info: \partrangeref created on input line 468.
-Package refstyle Info: \Partrangeref created on input line 468.
-Package refstyle Info: \partpageref created on input line 468.
-Package refstyle Info: New reference template \newref{chap} on input line 501.
-Package refstyle Info: \chapkey created on input line 501.
-Package refstyle Info: \chaplabel created on input line 501.
-Package refstyle Info: \chapref created on input line 501.
-Package refstyle Info: \Chapref created on input line 501.
-Package refstyle Info: \chaprangeref created on input line 501.
-Package refstyle Info: \Chaprangeref created on input line 501.
-Package refstyle Info: \chappageref created on input line 501.
-Package refstyle Info: New reference template \newref{sec} on input line 511.
-Package refstyle Info: \seckey created on input line 511.
-Package refstyle Info: \seclabel created on input line 511.
-Package refstyle Info: \secref created on input line 511.
-Package refstyle Info: \Secref created on input line 511.
-Package refstyle Info: \secrangeref created on input line 511.
-Package refstyle Info: \Secrangeref created on input line 511.
-Package refstyle Info: \secpageref created on input line 511.
-Package refstyle Info: New reference template \newref{eq} on input line 526.
-Package refstyle Info: \eqkey created on input line 526.
-Package refstyle Info: \eqlabel created on input line 526.
-Package refstyle Info: \eqref created on input line 526.
-Package refstyle Info: \Eqref created on input line 526.
-Package refstyle Info: \eqrangeref created on input line 526.
-Package refstyle Info: \Eqrangeref created on input line 526.
-Package refstyle Info: \eqpageref created on input line 526.
-Package refstyle Info: New reference template \newref{fig} on input line 544.
-Package refstyle Info: \figkey created on input line 544.
-Package refstyle Info: \figlabel created on input line 544.
-Package refstyle Info: \figref created on input line 544.
-Package refstyle Info: \Figref created on input line 544.
-Package refstyle Info: \figrangeref created on input line 544.
-Package refstyle Info: \Figrangeref created on input line 544.
-Package refstyle Info: \figpageref created on input line 544.
-Package refstyle Info: New reference template \newref{tab} on input line 553.
-Package refstyle Info: \tabkey created on input line 553.
-Package refstyle Info: \tablabel created on input line 553.
-Package refstyle Info: \tabref created on input line 553.
-Package refstyle Info: \Tabref created on input line 553.
-Package refstyle Info: \tabrangeref created on input line 553.
-Package refstyle Info: \Tabrangeref created on input line 553.
-Package refstyle Info: \tabpageref created on input line 553.
-Package refstyle Info: New reference template \newref{fn} on input line 568.
-Package refstyle Info: \fnkey created on input line 568.
-Package refstyle Info: \fnlabel created on input line 568.
-Package refstyle Info: \fnref created on input line 568.
-Package refstyle Info: \Fnref created on input line 568.
-Package refstyle Info: \fnrangeref created on input line 568.
-Package refstyle Info: \Fnrangeref created on input line 568.
-Package refstyle Info: \fnpageref created on input line 568.
-))
-Package refstyle Info: New reference template \newref{equ} on input line 23.
-Package refstyle Info: \equkey created on input line 23.
-Package refstyle Info: \equlabel created on input line 23.
-Package refstyle Info: \equref created on input line 23.
-Package refstyle Info: \Equref created on input line 23.
-Package refstyle Info: \equrangeref created on input line 23.
-Package refstyle Info: \Equrangeref created on input line 23.
-Package refstyle Info: \equpageref created on input line 23.
-Package refstyle Info: Reference template \newref{fig} redefined on input line 
-24.
-Package refstyle Info: \figkey created on input line 24.
-Package refstyle Info: \figlabel created on input line 24.
-Package refstyle Info: \figref created on input line 24.
-Package refstyle Info: \Figref created on input line 24.
-Package refstyle Info: \figrangeref created on input line 24.
-Package refstyle Info: \Figrangeref created on input line 24.
-Package refstyle Info: \figpageref created on input line 24.
-Package refstyle Info: New reference template \newref{subfig} on input line 25.
-
-Package refstyle Info: \subfigkey created on input line 25.
-Package refstyle Info: \subfiglabel created on input line 25.
-Package refstyle Info: \subfigref created on input line 25.
-Package refstyle Info: \Subfigref created on input line 25.
-Package refstyle Info: \subfigrangeref created on input line 25.
-Package refstyle Info: \Subfigrangeref created on input line 25.
-Package refstyle Info: \subfigpageref created on input line 25.
-Package refstyle Info: Reference template \newref{chap} redefined on input line
- 26.
-Package refstyle Info: \chapkey created on input line 26.
-Package refstyle Info: \chaplabel created on input line 26.
-Package refstyle Info: \chapref created on input line 26.
-Package refstyle Info: \Chapref created on input line 26.
-Package refstyle Info: \chaprangeref created on input line 26.
-Package refstyle Info: \Chaprangeref created on input line 26.
-Package refstyle Info: \chappageref created on input line 26.
-Package refstyle Info: New reference template \newref{sect} on input line 27.
-Package refstyle Info: \sectkey created on input line 27.
-Package refstyle Info: \sectlabel created on input line 27.
-Package refstyle Info: \sectref created on input line 27.
-Package refstyle Info: \Sectref created on input line 27.
-Package refstyle Info: \sectrangeref created on input line 27.
-Package refstyle Info: \Sectrangeref created on input line 27.
-Package refstyle Info: \sectpageref created on input line 27.
-Package refstyle Info: New reference template \newref{ssect} on input line 28.
-Package refstyle Info: \ssectkey created on input line 28.
-Package refstyle Info: \ssectlabel created on input line 28.
-Package refstyle Info: \ssectref created on input line 28.
-Package refstyle Info: \Ssectref created on input line 28.
-Package refstyle Info: \ssectrangeref created on input line 28.
-Package refstyle Info: \Ssectrangeref created on input line 28.
-Package refstyle Info: \ssectpageref created on input line 28.
-Package refstyle Info: New reference template \newref{sssect} on input line 29.
-
-Package refstyle Info: \sssectkey created on input line 29.
-Package refstyle Info: \sssectlabel created on input line 29.
-Package refstyle Info: \sssectref created on input line 29.
-Package refstyle Info: \Sssectref created on input line 29.
-Package refstyle Info: \sssectrangeref created on input line 29.
-Package refstyle Info: \Sssectrangeref created on input line 29.
-Package refstyle Info: \sssectpageref created on input line 29.
-Package refstyle Info: Reference template \newref{tab} redefined on input line 
-30.
-Package refstyle Info: \tabkey created on input line 30.
-Package refstyle Info: \tablabel created on input line 30.
-Package refstyle Info: \tabref created on input line 30.
-Package refstyle Info: \Tabref created on input line 30.
-Package refstyle Info: \tabrangeref created on input line 30.
-Package refstyle Info: \Tabrangeref created on input line 30.
-Package refstyle Info: \tabpageref created on input line 30.
-Package refstyle Info: New reference template \newref{step} on input line 31.
-Package refstyle Info: \stepkey created on input line 31.
-Package refstyle Info: \steplabel created on input line 31.
-Package refstyle Info: \stepref created on input line 31.
-Package refstyle Info: \Stepref created on input line 31.
-Package refstyle Info: \steprangeref created on input line 31.
-Package refstyle Info: \Steprangeref created on input line 31.
-Package refstyle Info: \steppageref created on input line 31.
-Package refstyle Info: New reference template \newref{annex} on input line 32.
-Package refstyle Info: \annexkey created on input line 32.
-Package refstyle Info: \annexlabel created on input line 32.
-Package refstyle Info: \annexref created on input line 32.
-Package refstyle Info: \Annexref created on input line 32.
-Package refstyle Info: \annexrangeref created on input line 32.
-Package refstyle Info: \Annexrangeref created on input line 32.
-Package refstyle Info: \annexpageref created on input line 32.
-
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip56
 \f@ncyO@elh=\skip57
@@ -412,31 +263,31 @@ Package refstyle Info: \annexpageref created on input line 32.
 \f@ncyO@orf=\skip64
 )
 (D:\ECOLE\ift606\ballin-avenger\rapport\rapport.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 75.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Info: Redefining \degres on input line 98.
-LaTeX Info: Redefining \dots on input line 98.
-LaTeX Info: Redefining \up on input line 98.
+LaTeX Info: Redefining \degres on input line 75.
+LaTeX Info: Redefining \dots on input line 75.
+LaTeX Info: Redefining \up on input line 75.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 98.
+(frenchb.ldf)                of your document, on input line 75.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -452,32 +303,31 @@ Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 \makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks26
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 108.
+LaTeX Font Info:    Try loading font information for U+msa on input line 82.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 108.
+LaTeX Font Info:    Try loading font information for U+msb on input line 82.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 119.
-
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 93.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 126.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 105.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 117.
 
 (D:\ECOLE\ift606\ballin-avenger\rapport\rapport.toc)
 \tf@toc=\write3
@@ -495,22 +345,21 @@ Package natbib Warning: Empty `thebibliography' environment on input line 9.
 
 ) [5] (D:\ECOLE\ift606\ballin-avenger\rapport\rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 4406 strings out of 493921
- 58430 string characters out of 3147285
- 122845 words of memory out of 3000000
- 7596 multiletter control sequences out of 15000+200000
- 34515 words of font info for 95 fonts, out of 3000000 for 9000
+ 3561 strings out of 493921
+ 45989 string characters out of 3147285
+ 106658 words of memory out of 3000000
+ 6764 multiletter control sequences out of 15000+200000
+ 28396 words of font info for 77 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 30i,13n,43p,295b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,12n,43p,247b,256s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on rapport.pdf (5 pages, 59140 bytes).
+c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
+b8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on rapport.pdf (5 pages, 47980 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 35 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

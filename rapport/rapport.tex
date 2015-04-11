@@ -13,23 +13,10 @@
 
     \usepackage[nooneline]{subfigure}
     \usepackage{bm}
-%    \usepackage{prelim2e}
     \usepackage{booktabs}
     \usepackage{color}
     \usepackage{rotating}
     \usepackage{afterpage}
-%    \usepackage[draft]{fixme}
-    \usepackage{refstyle}
-        \newref{equ}{refcmd=(\ref{#1}),name=équation~,Name=Équation~,names=équations~,Names=Équation~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{fig}{name=figure~,names=figures~,Name=Figure~,Names=Figures~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{subfig}{name=figure~,names=figures~,Name=Figure~,Names=Figures~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{chap}{name=chapitre~,names=chapitres~,Name=Chapitre~,Names=Chapitres~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{sect}{name=section~,names=sections~,Name=Section~,Names=Sections~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{ssect}{name=section~,names=sections~,Name=Section~,Names=Sections~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{sssect}{name=section~,names=sections~,Name=Section~,Names=Sections~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{tab}{name=tableau~,names=tableaux~,Name=Tableau~,Names=Tableaux~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{step}{name=étape~,names=étapes~,Name=Étape~,Names=Étapes~,lsttxt={\ et\ },rngtxt={\ à\ }}
-        \newref{annex}{name=annexe~,names=annexes~,Name=Annexe~,Names=Annexes~,lsttxt={\ et\ },rngtxt={\ à\ }}
     \usepackage{fancyhdr}
 
     \setlength{\textwidth}{175mm}
@@ -49,14 +36,6 @@
     \setlength{\belowdisplayshortskip}{-2mm}
     \setlength{\topsep}{0mm}
     \addtolength{\headsep}{10mm}
-
-%    \renewcommand{\subfigcapskip}{3pt}
-%    \renewcommand{\subfigtopskip}{2pt}
-%    \renewcommand{\subfigbottomskip}{3pt}
-%    \setlength{\textfloatsep}{6pt plus 3pt minus 3pt}
-%    \setlength{\floatsep}{6pt plus 3pt minus 3pt}
-%    \setlength{\abovecaptionskip}{5pt}
-
 
     % Allows to have list item with less space between each element of the list
     % Use \noitemsep or \doitemsep before
@@ -88,21 +67,16 @@
 
     \bibliographystyle{plainnat-fr}
 
-%    \linespread{1.6}
-
     \pagestyle{fancy}
 
     \lhead{\small{DI, Université de Sherbrooke}}
-    \rhead{\small{Rapport de recherche no~XXX}}
+    \rhead{\small{Projet ift606}}
 
 \begin{document}
 
-\title{Votre titre %
-\thanks{Ce travail a été financé par ...}
-}
+\title{Votre titre}
 
-\author{Auteur 1 et Auteur 2 %
-\thanks{Auteur à contacter. Tél.: +819-821-8000 xNNNN; télécopieur:+819-821-8200}}
+\author{Auteur 1 et Auteur 2}
 \date{}
 
 \maketitle
@@ -123,7 +97,7 @@
 \vspace*{5mm}
 
 \begin{center}
-\textbf{- Rapport de recherche no XXX -}
+\textbf{- Rapport de recherche - projet ift606 -}
 \end{center}
 
 \vspace*{5mm}
@@ -166,4 +140,3 @@ $$ \frac{2}{3} $$
 \bibliography{biblio}
 
 \end{document}
-`
