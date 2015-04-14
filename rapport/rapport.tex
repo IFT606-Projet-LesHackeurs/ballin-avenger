@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
     \usepackage{times}
     \usepackage[latin1]{inputenc}
+    \usepackage[T1]{fontenc}
     \usepackage[frenchb]{babel}
     \usepackage{graphicx}
     \usepackage[numbers]{natbib}
@@ -36,6 +37,8 @@
     \setlength{\belowdisplayshortskip}{-2mm}
     \setlength{\topsep}{0mm}
     \addtolength{\headsep}{10mm}
+
+    % \setcounter{tocdepth}{2}
 
     % Allows to have list item with less space between each element of the list
     % Use \noitemsep or \doitemsep before
@@ -74,10 +77,10 @@
 
 \begin{document}
 
-\title{Votre titre}
+\title{Recherche vulnérabilités Active Direcotry}
 
-\author{Auteur 1 et Auteur 2}
-\date{}
+\author{Jean-Phillipe Goulet\\Gabriel Schnobb\\Alexandre Brochu}
+\date{\today{}}
 
 \maketitle
 
@@ -90,27 +93,14 @@
     Département d'informatique \\
     Université de Sherbrooke \\
     Sherbrooke (Qc), Canada, J1K 2R1 \\
-    \{vous, autre\}@usherbrooke.ca
 }
 \end{center}
 
-\vspace*{5mm}
-
-\begin{center}
-\textbf{- Rapport de recherche - projet ift606 -}
-\end{center}
-
-\vspace*{5mm}
-
-\begin{abstract}
-    Insérer le résumé ici.
-\end{abstract}
+\vspace*{10mm}
 
 %-------------------------------------------------------------------------
 
-\renewcommand{\listtablename}{Liste des tableaux}
 \renewcommand{\refname}{Bibliographie}
-\renewcommand{\listfigurename}{Liste des figures}
 
 \eject
 
@@ -118,21 +108,111 @@
 
 \eject
 
-    \addcontentsline{toc}{section}{\listtablename}
-    \listoftables
-    \addcontentsline{toc}{section}{\listfigurename}
-    \listoffigures
-
-\eject
-
 % ----------------------------------------------
 % Contenu
 % ----------------------------------------------
-Le contenu ici !
+\section{Mise en contexte}
+% Pour ce projet axé sur la sécurité, notre équipe a décidé de procéder à une étude de sécurité sur le logiciel de gestion de permissions Active Directory de Microsoft. Nous voulions trouver des façon utilsées par les pirates informatique pour exploiter et compromettre les données d'une entreprise qui dépent d’Active Directory. Tout au long du cours ift606, sécurité et cryptographie, active directory a parfois été sujet de discussions, mais jamais en détail. Nous voulions donc approfondir nos connaissances avec l’outil ainsi que les failles de sécurités présentes dans ses modules.
 
-dick butt
+Au départ, trois différentes vulnérabilités ont été retenues pour des recherches plus en détail. Elles visaient plus principalement les versions 2003 et 2008 du logiciel. Suites à des recherches plus poussées, d’autres vulnérabilités affectant des versions plus récentes de l’application furent trouvées. Au cours de ce rapport, on présente donc plus en détails ces nouvelles vulnérabilités qui peuvent être exploités jusqu’au versions 2012 d’Active Directory d’après les recherches. Pour chacune des 4 nouvelles vulnérabilités retenues, nous allons rapidement expliquer leur effet, donner leur fonctionnement plus en détail, exposer une façon de mitiger les dangers et créer un lien avec la matière vue en classe. Par contre, pour commencer, il faut faire une description des modules et fonctionnement d’Active Directory.
 
-$$ \frac{2}{3} $$
+\section{Réalisation}
+Il y a eu plusieurs réalisations importantes au cours de ce projet. Voici une courte présentation de ceux-ci.
+
+Un grand nombre d’attaques nécessitent un travail d’ingénierie sociale pour obtenir certaines informations avant de débuter l’attaque informatique. Par exemple, beaucoup des attaques sur les versions plus récentes du logiciel nécessite l’accès à un compte sur le domaine régit par l’instance Active Directory. Par contre, dans le cas où l’attaque provient d’un employé de l’intérieur de l’entreprise, il n’y a aucun besoin de faire appel à de l’ingérierie sociale pour obtenir l’accès à un compte sur le réseau / domaine. Le compte de l’employé sera suffisant. Dans la totalité des vulnérabilités étudiées en détail au cours de cette recherche, le but est d’ajouter des accès et des privilèges à un compte sans nécessairement avoir les permissions nécessaire pour le faire au départ. C’est pourquoi les accès du compte de base n’ont pas d’importance. Au final, s’il possible d’ajouter les privilèges d’administrateurs du domaine sur un compte utilisateur, il aura accès à tous les services et toutes les ressources du réseau. Toutes ces vulnérabilités sont toutes utiles à l’étape d’escalation des privilèges d’une attaque informatique.
+
+\section{Liste des exploits}
+asdf
+
+\subsection{Multi / Single step Privilege Escalation}
+\subsubsection{Fonctionnement}
+Le MSPE se base sur plusieurs petites étapes pour arriver à toujours incrémenter ses droits dans le domaine. Pas nécessairement les droits de son propre compte, mais plus en utilisant les comptes d’autres utilisateurs.
+
+Pour ce faire, il faut utiliser des permissions qui sont donnés à des utilisateurs, parfois sans que les administrateurs de domaine ne le sachent ou ne s’en rappellent. La permission en particulier est celle qui permet de changer le mot de passe d’un certain groupe d’utilisateur. Par exemple, un employé du département TI aurait besoin de cette permission pour changer le mot de passe d’un utilisateur l’ayant oublié. Ces permissions peuvent souvent être données à des chefs d’équipes par exemple. Ensuite, une personne pouvant changer le mot de passe d’une personne ayant plus de permissions, peut se connecter en tant que celle-ci et continuer de changer les mots de passe d’autres employés qui ont des permissions similaire.
+
+Pour finalement obtenir des accès à des comptes avec des permissions plus hautes. Cet exploit se base donc sur le fait qu’il y a tellement de configuration à faire dans Active Directory que souvent ceux qui s’en occupe manque des détails ou donne des permissions à d’autre pour faciliter leur travail pour ne pas être dérangé à chaque changement.
+
+Une comparaison peut être faire avec l’homme qui a commencé avec un trombone et après des dizaines d’échange a fini avec une maison. Il est donc passé de presque rien à un domicile. Ce qui représente bien cet exploit.
+
+\subsubsection{Résultat de l'exploit}
+Grâce à cet exploit, on peut avoir accès à des comptes administrateurs, ou au moins plus haut que les permissions du compte initial, tout dépendant de la façon dont les permissions sont gérées. Si les administrateurs laisse trop de permissions aux utilisateurs ou s’il sont très strict dans les permissions données.
+
+\subsubsection{Mitiger les risques}
+Pour mitiger les risques, comme indiquer plus haut, il faut avoir un contrôle et une connaissance de toutes les permissions qui sont données à chaque groupe. Ainsi, on peut s’assurer que les utilisateurs n’ont pas de droits autres que ceux qui leurs sont requis pour travailler.
+
+\subsubsection{Lien avec le cours}
+Cet exploit démontre un exemple de problème amené à donner trop de permissions aux employés, souvent pour qu’ils puissent mieux travailler sans avoir besoin de déranger la division TI de l’entreprise, mais qui peut causer des failles de sécurité.
+
+\subsection{Pass The Hash}
+\subsubsection{Fonctionnement}
+Ce type d’exploit permet de se connecter grâce à un hash de mot de passe. Ce hash de mot de passe peut être obtenu avec un MITM ou en écoutant tout simplement sur le réseau. 
+
+Cet exploit permet de se connecter sans avoir à décrypter le mot de passe, ce qui rend le fait d’avoir un mot de passe solide inutile contre cet exploit. Sans avoir à décrypter le mot de passe, il est beaucoup plus facile de se connecter à un réseau.
+
+Pour être capable d’utiliser le hash, il faut que le système utilise le Single Sign-On et donc qu’il se base sur les hash de mot de passe, sans demander les mots de passe à chaque demande d’accès à un service. 
+
+Il faut ensuite injecter le hash obtenu dans le service lsass local de sa machine (il faut donc être administrateur de sa propre machine). Ensuite, lorsque l’on se connectera sur le serveur, le hash va être envoyé, nous permettant de spoofer l’identité de l’utilisateur propriétaire du hash.
+
+\subsubsection{Résultat de l'exploit}
+Cet exploit permet de se connecter à n’importe quel compte pour lequel on est capable d’obtenir un hash de mot de passe, souvent par écoute du réseau.
+
+\subsubsection{Mitiger les risques}
+Pour mitiger les risques, il y a deux principales solutions. La première étant d’enlever le Single Sign-On, qui est une solution désagréable puisqu’elle oblige les utilisateurs à entrer leurs mots de passe à chaque fois. La deuxième serait d’utiliser Kerberos avec son système de tickets à la place de NTLM, de cette façon le serveur n’utilise pas les hash de mot de passe, mais des tickets pour déterminer si l’utilisateur à des droits. Cette méthode n’est toutefois pas parfaite comme le démontre les 2 prochains exploits.
+
+\subsubsection{Lien avec le cours}
+Cet exploit est un exemple flagrant de spoofing d’identité en se faisant passer pour une autre utilisateur en utilisant sont hash. Aussi, il utilise souvent des outils d’écoute réseau ou de MITM pour arriver à ses fins.
+
+\subsection{Ticket Forgery}
+\subsubsection{Fonctionnement}
+Cette attaque vise le protocole “Kerberos” utilisé par défaut dans le module d’authentification d’Active Directory depuis la version 2000. Ce protocole fonctionne à l’aide de tickets d’authentification pour simplifier le processus du côté des utilisateurs du domaine
+
+Au cours d’une connexion légitime avec ce protocole, lorsque l’usager donne le nom de son compte et son mot de passe, le module KDC (Kerberos Key Distribution Center) valide les informations. Après la validation réussie, le KDC fabrique un ticket de type TGT (ticket granting ticket). Ce premier ticket contient de l’information sur le serveur auquel on se connecte, l’information de l’usager et l’information sur les clés de session pour les échanges futurs. De plus, lors de la création de ce type de TGT, le KDC obtient tous les groupes d’accès de l’usager qui tente de se connecter. Il place ces groupes d’accès dans une structure apellée PAC (Privilege Attribute Certificate). Cette structure est très importante lors de cette attaque. Lorsque le PAC est placé dans l’information du ticket, le KDC signe l’information à l’aide de la clé du serveur. Cette signature empêche le client de modifier l’information contenue dans le PAC. Si le PAC est modifié, lorsque le ticket sera envoyé avec une requête pour l’accès à un service, la signature ne sera pas valide et l’accès sera refusé.
+
+Lorsque l’usager tente de se connecter à un service, il envoie sa requête au serveur avec le TGT. Si la validation du ticket et du PAC sont réussies, le KDC procède à la création d’un nouveau ticket du type TGS (Ticket Granting Service). Ce ticket contient l’information pour se connecter à un service tel les clés pour l’échange de données et un temps de vie. Puisque la signature du PAC est correcte, on copie le PAC dans le TGS. Avec ce ticket on peut demander accès à un service. Puisque le PAC est copié, on peut déterminer si l’usager a les privilèges nécessaire pour accèder au service.
+
+Malheureusement, il existait un problème dans le protocole Kerberos identifier par MS14-068. Effectivement, il était possible pour un utilisateur malicieux d’ajouter des groupes de permissions dans l’information des tickets. Dans ce cas, l’utilisateur demande un TGT qui ne contient pas d’information dans le PAC. Ensuite, sur sa machine, l’usager forge un PAC qui contient les groupes d’accès administrateurs qui donnent tous les accès dans le réseau. On injecte ce PAC dans le TGT légitime reçu du KDC. Puisque le KDC valide une signature pour s’assurer que le PAC n’as pas été modifier il faut donc utiliser une vulnérabilité dans le système pour la prochaine étape. Il faut aussi forger une signature. La vulnérabilité provient du fait qu’il n’y a pas de validation du type de signature du PAC. Il est donc possible d’utiliser n’importe quelle technique dans la librairie dynamique de cryptographie. Dans cette librairie, la fonction de hashage MD5 est la méthode choisie par les utilisateurs malicieux. On signe donc le PAC à l’aide d’une fonction de hashage qui ne prend pas un clé en paramètre. On donne le bon type de signature et le KDC validera la signature avec cette technique. Puisqu’aucune clé n’est nécessaire, le KDC procède à la création du TGS comme d’habitude et copie le PAC forgé dans le nouveau ticket.
+
+\subsubsection{Résultat de l'exploit}
+Le nouveau TGS reçu par le client comprend maintenant les groupes d’accès administrateurs que l’utilisateur malicieux a ajouté lui-même. Il possède maintenant accès à toutes les ressources et tous les services.
+
+\subsubsection{Mitiger les risques}
+Une mise à jours est maintenant sortie afin de régler ce problème (KB3011780). Il est donc important d’installer cette patch puisque l’exploit (MS14-068) marche sur presque toutes les versions d’Active Directory.
+
+\subsubsection{Lien avec le cours}
+Nous avons souvent parlé en classe de l’importance des mises à jours. Ici il est impératif d’installer cette patch afin de mitiger l’attaque.
+
+\subsection{Golden Ticket}
+\subsubsection{Fonctionnement}
+Le “Golden ticket” est une vulnérabilité du service de sécurité Kerberos, encore une fois. Cependant, il ne s’agit pas nécessairement ici d’un exploit d’élévation de privilège, mais plutôt une forme de “backdoor”. 
+
+    Le format d’un ticket TGT est connus publiquement, une signature cryptographique est donc requise afin de s’assurer que c’est bien le serveur. Cette encryption est fait à partir d’une clé sur le serveur (basé sur le mot de passe du user caché krbtgt). Dans cette attaque, on obtient cette clé du contrôlleur domaine en vidant la mémoire de LSASS (processus d’authentification et sécurité) sur disque.
+    
+    Lorsque l’on possède la clée, on peut créer nos propre tickets et les signé comme si c’était le serveur qui l’avait générée. Le serveur ne peut plus distinguer les tickets créés par une tierce partie malicieuse ou les tickets qu’il produit lui même.
+
+    Cette clé est cependant assez difficile à obtenir puisque nous devons avoir compromis un compte administrateur ainsi que le DC. C’est donc pourquoi nous classifions cette attaque comme un backdoor et non une attaque d’élévation de privilège.
+
+    Comme discutté plus haut, les tickets TGT sont utilisés pour générer les TGS. On a donc accès à beaucoup de ressources sécurisées sur le domaine en ayant cette clée. Généralement, les TGT disposent d’un temps de vie de 20 minutes par défaut et les TGS en ont un de 10 heures par défaut. Cependant, il nous est possible d’en créer un autre très facilement ou bien de changer ce TTL puisque cette information est dans le ticket. Nous pouvons donc produire un ticket qui est valide pour 20 ans si on veut.
+
+\subsubsection{Résultat de l'exploit}
+Avec un Golden ticket, nous avons accès à presque toutes les ressources sur un domaine puisque nous pouvons forger nos certificats de sécurités. C’est une attaque qui est très difficile à détecter puisque le système n’as pas de façons de distinguer les tickets produits par le système et ceux de l’usager malicieux.
+
+\subsubsection{Mitiger les risques}
+Changer le password du compte krbtgt (2 fois pour complètement effacer l’historique de mots de passe). Par contre, cette méthode peut entraîner des complications avec certains services qui se feront refuser l’accès à certaines ressources. Ces services devrons souvent être redémmarés.
+
+\subsubsection{Lien avec le cours}
+asdf
+
+\section{Apprentissages au cours du projet}
+Puisque nous n’avions pas travaillé avec les outils utilisés lors de ce projet, nous avons eu un très grand nombre d’opportunités d’apprentissage. Dès le début de la recherche nécessaire pour ce projet, trouver des informations par rapport aux vulnérabilités implique de lire des documents plus complexe qu’a l’habitude surtout pour les vulnérabilités récentes.
+
+    Premièrement, l’organisation et la configuration de l’environnement de test pour nos expérimentations nous en a beaucoup appris. Notre environnement de test compte plusieurs machines virtuelle: une pour la version 2003 de Windows Server, une pour la version 2008 de Windows Server, une pour représenter l’utilisateur malicieux dans le domaine Active Directory et une machine Kali Linux pour le début du projet. Pour ce qui est des deux versions de Windows Server, il fallait configurer Active Directory avec quelques usagers de test. La prochaine étape de la configuration était d’autoriser la machine de l’utilisateur malicieux au domaine des machines serveurs. Il fallait ajouter l’ordinateur du réseau comme étant accepté dans le domaine. À partir de ce moment, l’utilisateur pouvait utiliser son nom d’usager et son mot de passe pour se connecter au domaine. Ensuite, il fallait créer des cible de l’attaque. Dans ce cas, la cible était un dossier partagé dans le domaine seulement accessible aux administrateurs du domaine. Pour terminer la configuration, nous avons modifier les permissions des différents usagers utilisés pour le test. Au final, aucun usager avait accès au dossier cible et il fallait utiliser les différentes vulnérabilités pour avoir accès aux données sensibles.
+
+    Deuxièmement, nous avons beaucoup appris sur les protocoles d’authentification utilisés dans les différentes versions d’Active Directory. La plus vieux protocole sur lequel il a fallu tester des exploits est NTLM (NT LAN Manager). Ce protocole offre une authentification, l’intégrité et la confidentialité aux usagers. Par contre, puisque cette technologie est vieille, il existe beaucoup de problème avec cette dernière. NTLM est vulnérable aux attaques de type “pass-the-hash” comme mentionné plus tôt et à d’autres attaques plus féroces qui permettent de l’exécution de code. Malgré que ce protocole n’est plus celui utilisé par défaut dans les versions récentes de Windows Server, dans certain cas, il reste le protocole utilisé dans certains cas spécifiques. Le nouveau protocole d’authentification, beaucoup plus solide, est Kerberos. Développé par MIT, nous avons appris beaucoup sur ce dernier. Il se base sur la création de tickets signés pour identifier les usagers légitimes qui ont accès sur le domaine et accès aux services qu’il demande d’utliliser. Évidemment, nous avons appris aussi quelques façon d’exploiter des problèmes présent dans les modules de Kerberos. Par exemple, dans la signature et leur vérification.
+
+    Pour finir, nous en avons appris sur les différents processus utiles dans l’authentification dans un domaine Active Directory. Par exemple, le processus LSASS qui représente une partie en mémoire qui content de l’information d’authentification. Nous avons même vu quelques outils pour injecter des information dans cette mémoire ou lire de l’information sensible.
+
+\section{Conclusion}
+En conclusion, Active Directory est une cible très importante pour un usager malicieux visant une entreprise. Ce service contient de l’information protègé, gère les droits et les accès aux ressources. Il est donc important de bien configurer ce système afin d’éviter bien des maux de tête.
 
 \eject
 
